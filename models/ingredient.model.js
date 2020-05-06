@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const Schema = mongoose.Schema;
 
 const ingredientSchema = new Schema(
   {
     _id: Schema.Types.ObjectId,
-    name: { type: String, required: true },
+    name: { type: String, required: true, unique: true },
     description: { type: String },
     hsr: { type: Number },
     ghg: { type: Number },
@@ -23,6 +24,8 @@ const ingredientSchema = new Schema(
     timestamps: true,
   }
 );
+
+ingredientSchema.plugin(uniqueValidator);
 
 const Ingredient = mongoose.model("Ingredient", ingredientSchema);
 

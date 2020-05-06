@@ -42,6 +42,9 @@ router.route("/add").post((req, res) => {
     name: req.body.name,
     description: req.body.description,
     ingredients: req.body.ingredients,
+    hsr: req.body.hsr,
+    ghg: req.body.ghg,
+    energy: req.body.energy,
   });
   return newMeal
     .save()
@@ -54,6 +57,9 @@ router.route("/add").post((req, res) => {
           name: result.name,
           description: result.description,
           ingredients: result.ingredients,
+          hsr: req.body.hsr,
+          ghg: req.body.ghg,
+          energy: req.body.energy,
         },
         request: {
           type: "GET",

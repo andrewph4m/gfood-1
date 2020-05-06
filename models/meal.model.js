@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const mealSchema = new Schema(
   {
     _id: Schema.Types.ObjectId,
-    name: { type: String, required: true },
+    name: { type: String, required: true, unique: true },
     description: { type: String },
     energy: { type: Number },
     ghg: { type: Number },
@@ -17,7 +17,6 @@ const mealSchema = new Schema(
           type: Schema.Types.ObjectId,
           ref: "Ingredient",
           required: true,
-          unique: true,
         },
         quantity: { type: Number, default: 1 },
       },
