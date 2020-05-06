@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 let Meal = require("../models/meal.model");
 let Ingredient = require("../models/ingredient.model");
 
-const meals_url = "http://localhost:5000/meals/";
+const meals_url = "https://gfood-api.azurewebsites.net/meals/";
 
 router.route("/").get((req, res) => {
   Meal.find()

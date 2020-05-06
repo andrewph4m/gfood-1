@@ -2,7 +2,7 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 let Ingredient = require("../models/ingredient.model");
 
-const ingredients_url = "http://localhost:5000/ingredients/";
+const ingredients_url = "https://gfood-api.azurewebsites.net/ingredients/";
 
 router.route("/").get((req, res) => {
   Ingredient.find()
